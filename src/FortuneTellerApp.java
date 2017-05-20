@@ -51,7 +51,6 @@ public class FortuneTellerApp {
 			String c = input.next();
 			checkForQuit(c);
 			numSiblings = Integer.parseInt(c);
-
 			break;
 		default: // ask the user for their number of siblings
 			System.out.println("Please enter how many siblings you have:");
@@ -107,7 +106,7 @@ public class FortuneTellerApp {
 		} else if (numSiblings == 1) {
 			vacationHome = "in Amsterdam";
 		} else if (numSiblings == 2) {
-			vacationHome = "Madrid";
+			vacationHome = "in Madrid";
 		} else if (numSiblings == 3) {
 			vacationHome = "in London";
 		} else if (numSiblings >= 4) {
@@ -117,25 +116,27 @@ public class FortuneTellerApp {
 		}
 
 		// give mode of transportation based on favorite color
-		String transportation;
-		if (favColor.toLowerCase().equals("red")) {
+		String transportation = " ";
+		switch (favColor.toLowerCase()) {
+		case "red":
+		case "blue":
 			transportation = "Corvette";
-		} else if (favColor.toLowerCase().equals("orange")) {
+			break;
+		case "orange":
 			transportation = "Harley motorcycle";
-		} else if (favColor.toLowerCase().equals("yellow")) {
-			transportation = "50 ft yacht";
-		} else if (favColor.toLowerCase().equals("green")) {
-			transportation = "Lamborghini";
-		} else if (favColor.toLowerCase().equals("blue")) {
-			transportation = "Corvette";
-		} else if (favColor.toLowerCase().equals("indigo")) {
+			break;
+		case "yellow":
+		case "indigo":
 			transportation = "100 ft yacht";
-		} else if (favColor.toLowerCase().equals("violet")) {
+			break;
+		case "green":
+			transportation = "Lamborghini";
+		case "violet":
 			transportation = "helicopter";
-		} else {
+			break;
+		default:
 			transportation = "bicycle";
 		}
-
 		// The user’s fortune should be thus:
 		// [First Name] [Last Name] will retire in [# of Years] with [Amount
 		// of
@@ -145,7 +146,7 @@ public class FortuneTellerApp {
 				+ " in the bank, a vacation home " + vacationHome + ", and travel by a " + transportation + ".");
 		input.close();
 	}
-	
+
 	public static void checkForQuit(String input) {
 		if (input.equalsIgnoreCase("quit")) {
 			System.out.println("Nobody likes a quitter...");
