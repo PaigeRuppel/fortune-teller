@@ -34,14 +34,12 @@ public class FortuneTellerApp {
 		checkForQuit(b);
 		int birthMonth = Integer.parseInt(b);
 
-		// ask the user for their favorite ROYGBIV color (provide help
-		// option)
-		System.out
-				.println("Please enter your favorite ROYGBIV color (enter \"help\" if you do not understand ROYGBIV):");
+		// ask the user for their favorite ROYGBIV color (provide help option)
+		System.out.println("Please enter your favorite ROYGBIV color (enter \"help\" if you do not understand ROYGBIV):");
 		String favColor = input.next();
 		checkForQuit(favColor);
 		int numSiblings;
-		switch (favColor) {
+		switch (favColor.toLowerCase()) {
 		case "help":
 			System.out.println("R = Red, O = Orange, Y = Yellow, G = Green, B = Blue, I = Indigo, V = Violet");
 			System.out.println("Please enter your favorite color:");
@@ -72,7 +70,7 @@ public class FortuneTellerApp {
 		// if the user's birth month is 5-8, they will have $____ in the
 		// bank;
 		// and if it is 9-12, then they will have $____ in the bank
-		// If the user enters something other than 1-12 as their birth
+		// If the user enters something other than 1-12 as their birthF
 		// month, they will have $0.00 in the bank.
 		String bankMoney;
 		switch (birthMonth) {
